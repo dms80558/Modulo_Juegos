@@ -1,6 +1,25 @@
-.card {
-  width: 400px;
+.contenedor-card{
+    height: 780px;
+    width: 1809px;
+    margin-left: 80px;
+    margin-top: 25px;
 }
+mat-card{
+  float: left;
+  width: 400px;
+  background-color: rgba(82, 148, 69, 0.63);
+  margin-right: 30px;
+  margin-bottom: 78px;
+
+}
+
+
+
+.card5{
+  margin-left: 670px;
+
+}
+
 
 .example-header-image {
   background-image: url('https://cdn-icons-png.flaticon.com/512/6831/6831874.png');
@@ -12,6 +31,29 @@
   align-items: center;
   justify-content: center;
 }
-.b_play {
-  margin-right: 70px;
+button{
+  border-radius: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  -ms-border-radius: 9px;
+  -o-border-radius: 9px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
+
+.b_play{
+  margin-right: 40px;
+  color: black;
+  background-color: rgba(151, 146, 151, 0.397);
+}
+.b_play:hover{
+  background-color: rgba(247, 0, 255, 0.322);
+}
+
+
+.b_share{
+  background-color: rgba(151, 146, 151, 0.397);
+}
+.b_play:hover{
+  background-color: rgba(247, 0, 255, 0.322);
+}
+
