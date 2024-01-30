@@ -1,0 +1,59 @@
+.contendedor-general{
+    width: 100vw;
+    height: 100vh;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.consola{
+    width: 400px;
+    height: 200px;
+    background-color: rgb(109, 102, 131);
+    padding: 10px;
+    color:white
+}
+
+.selecciones{
+    width: 300px;
+    height: 100px;
+    background-color: rgb(109, 102, 131);
+}
+
+.elecciones{
+    width: 80px; height: 80px;
+    margin: 10px;
+    float: left;
+    background-color: aliceblue;
+}
+
+.elecciones:hover{
+    cursor: pointer;
+    background-color: rgb(31, 202, 108);
+}
+
+.tijeras{
+    background-image: url('../../assets/img/tijeras.jpg');
+    background-size: cover;
+}
+
+.papel{
+    background-image: url('../../assets/img/papel.jpg');
+    background-size: cover;
+
+}
+
+.piedra{
+    background-image: url('../../assets/img/piedra.jpg');
+    background-size: cover;
+
+}
+
+@media only screen and (max-width:500px){
+    .consola{
+        width: 200px;
+    }
+}
