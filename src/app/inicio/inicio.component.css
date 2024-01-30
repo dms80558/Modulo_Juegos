@@ -1,0 +1,17 @@
+.card {
+  width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/6831/6831874.png');
+  background-size: cover;
+}
+
+.centered-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.b_play {
+  margin-right: 70px;
+}
