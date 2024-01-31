@@ -28,27 +28,55 @@
     margin: 10px;
     float: left;
     background-color: aliceblue;
+    animation: latir 2s;
+    -webkit-animation: latir 2s infinite;
 }
 
 .elecciones:hover{
     cursor: pointer;
     background-color: rgb(31, 202, 108);
+    
+}
+ /* definir animacion */
+@keyframes latir{
+    0%{
+        transform: scale(0.9);
+        -webkit-transform: scale(0.9);
+        -moz-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        -o-transform: scale(0.9);
+}50% {
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+}100%{
+    transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+}
 }
 
 .tijeras{
-    background-image: url('../../assets/img/tijeras.jpg');
-    background-size: cover;
+    background-image: url('../../assets/img/tijeras.png');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .papel{
-    background-image: url('../../assets/img/papel.jpg');
-    background-size: cover;
+    background-image: url('../../assets/img/papel.png');
+    background-size: contain;
+    background-repeat: no-repeat;
 
 }
 
 .piedra{
-    background-image: url('../../assets/img/piedra.jpg');
-    background-size: cover;
+    background-image: url('../../assets/img/piedra.png');
+    background-size: contain;
+    background-repeat: no-repeat;
 
 }
 

@@ -9,6 +9,10 @@ export class PptComponent  implements OnInit{
   texto:string="";
   texto2:string="";
   r:string="";
+  maquina:number = 5;
+  jugador:number = 5;
+  public images = ["../../assets/img/cred.png","../../assets/img/cred.png","../../assets/img/cred.png","../../assets/img/cred.png","../../assets/img/cred.png"];
+ 
 
   elecciones:string [] = ["piedra","papel","tijeras"];
   ngOnInit(): void {
@@ -25,11 +29,14 @@ export class PptComponent  implements OnInit{
       ||eleccion=="papel" && this.elecciones [eleccionMaquina]=="piedra"
       ||eleccion=="piedra" && this.elecciones [eleccionMaquina]=="tijeras"){
           this.r = "Ganaste 👏👏";
+          this.maquina -= 1;
       }
       else if (eleccion=="papel" && this.elecciones [eleccionMaquina]=="tijeras"
       ||eleccion=="piedra" && this.elecciones [eleccionMaquina]=="papel"
       ||eleccion=="tijeras" && this.elecciones [eleccionMaquina]=="papel"){
         this.r = "Has elegido mal estúdipo 🤌"
+        this.jugador -= 1;
+
       }
       else{
         this.r = ". . . Empate"
@@ -37,4 +44,7 @@ export class PptComponent  implements OnInit{
       
       
   }
+
+
+  
 }

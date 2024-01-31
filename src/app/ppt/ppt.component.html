@@ -1,4 +1,11 @@
 <div class="contendedor-general">
+    <div *ngFor="let image of {{images}}" class="vidas-consola">
+        <img id="vida1" src="/>
+        <img id="vida2" src="../../assets/img/cred.png"/>
+        <img id="vida3" src="../../assets/img/cred.png"/>
+        <img id="vida4" src="../../assets/img/cred.png"/>
+        <img id="vida5" src="../../assets/img/cred.png"/>
+    </div>
     <div class="consola">
         {{texto}}<br>
         {{texto2}}<br>
@@ -7,7 +14,7 @@
 
     <div class="selecciones">
         <div (click)="elegir('tijeras')"  class="elecciones tijeras" ></div>
-        <div  (click)="elegir('papel')" class="elecciones papel" ></div>
-        <div  (click)="elegir('piedra')" class="elecciones piedra" ></div>
+        <div  (click)="elegir('papel')" class="elecciones papel"></div>
+        <div  (click)="elegir('piedra')" class="elecciones piedra"></div>
     </div>
 </div>
