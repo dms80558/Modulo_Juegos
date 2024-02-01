@@ -1,10 +1,11 @@
 <div class="contendedor-general">
-    <div *ngFor="let image of {{images}}" class="vidas-consola">
-        <img id="vida1" src="/>
-        <img id="vida2" src="../../assets/img/cred.png"/>
-        <img id="vida3" src="../../assets/img/cred.png"/>
-        <img id="vida4" src="../../assets/img/cred.png"/>
-        <img id="vida5" src="../../assets/img/cred.png"/>
+    <div class="contador">
+        <p class="contador-maquina">Partidas ganadas de la maquina: {{maquina}}</p>
+        <p class="contador-jugador">Partidas que has ganado: {{jugador}}</p>
+
+    </div>
+    <div  class="vidas-consola">
+        <img *ngFor="let image of images" id="vida1" src={{images[4]}} />
     </div>
     <div class="consola">
         {{texto}}<br>

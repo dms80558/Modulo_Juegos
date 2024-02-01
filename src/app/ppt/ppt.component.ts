@@ -8,11 +8,28 @@ import { Component, OnInit } from '@angular/core';
 export class PptComponent  implements OnInit{
   texto:string="";
   texto2:string="";
-  r:string="";
-  maquina:number = 5;
-  jugador:number = 5;
+  r:string=""
+  //vidas
+  maquinav:number = 5;
+  jugadorv:number = 5;
+  //contador de partidas
+  maquina:number = 0;
+  jugador:number = 0;
+
   public images = ["../../assets/img/cred.png","../../assets/img/cred.png","../../assets/img/cred.png","../../assets/img/cred.png","../../assets/img/cred.png"];
- 
+
+  removeImage(){
+    this.images = ["../../assets/img/cred.png","../../assets/img/cred.png","../../assets/img/cred.png","../../assets/img/cred.png"];
+   }
+
+   reiniciar(){
+    if(this.maquinav==0&&this.jugadorv!=0){
+      this.jugador += 1; 
+    }
+    else if(this.maquinav!=0&&this.jugadorv==0){
+      this.maquina += 1; 
+    }
+   }
 
   elecciones:string [] = ["piedra","papel","tijeras"];
   ngOnInit(): void {
@@ -29,18 +46,36 @@ export class PptComponent  implements OnInit{
       ||eleccion=="papel" && this.elecciones [eleccionMaquina]=="piedra"
       ||eleccion=="piedra" && this.elecciones [eleccionMaquina]=="tijeras"){
           this.r = "Ganaste 👏👏";
-          this.maquina -= 1;
+          if(this.maquinav>0){
+            this.maquinav = this.maquinav - 1;
+          }
+          else{
+            this.jugador = this.jugador +1;
+
+            this.maquinav =0;
+            this.jugadorv = 0;
+          }
+          
+          this.reiniciar;
       }
       else if (eleccion=="papel" && this.elecciones [eleccionMaquina]=="tijeras"
       ||eleccion=="piedra" && this.elecciones [eleccionMaquina]=="papel"
       ||eleccion=="tijeras" && this.elecciones [eleccionMaquina]=="papel"){
         this.r = "Has elegido mal estúdipo 🤌"
-        this.jugador -= 1;
+        if(this.jugadorv>0){
+          this.jugadorv = this.jugadorv - 1;
+        }
+        else{
+          this.maquina = this.maquina +1;
+          this.maquinav =0;
+          this.jugadorv = 0;
+        }
 
       }
       else{
         this.r = ". . . Empate"
       }
+    
       
       
   }
