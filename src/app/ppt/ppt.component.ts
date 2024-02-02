@@ -46,14 +46,13 @@ export class PptComponent  implements OnInit{
       ||eleccion=="papel" && this.elecciones [eleccionMaquina]=="piedra"
       ||eleccion=="piedra" && this.elecciones [eleccionMaquina]=="tijeras"){
           this.r = "Ganaste 👏👏";
-          if(this.maquinav>0){
+          if(this.maquinav>=0){
             this.maquinav = this.maquinav - 1;
           }
-          else{
+          else if(this.maquinav==0){
             this.jugador = this.jugador +1;
-
-            this.maquinav =0;
-            this.jugadorv = 0;
+            this.maquinav =5;
+            this.jugadorv = 5;
           }
           
           this.reiniciar;
@@ -65,10 +64,10 @@ export class PptComponent  implements OnInit{
         if(this.jugadorv>0){
           this.jugadorv = this.jugadorv - 1;
         }
-        else{
+        else if(this.jugadorv==0){
           this.maquina = this.maquina +1;
-          this.maquinav =0;
-          this.jugadorv = 0;
+          this.maquinav =5;
+          this.jugadorv = 5;
         }
 
       }

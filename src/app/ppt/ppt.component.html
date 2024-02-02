@@ -5,12 +5,24 @@
 
     </div>
     <div  class="vidas-consola">
-        <img *ngFor="let image of images" id="vida1" src={{images[4]}} />
+        <img src="../../assets/img/cred.png" *ngIf="maquinav>=1;else vacio">
+        <img src="../../assets/img/cred.png" *ngIf="maquinav>=2;else vacio">
+        <img src="../../assets/img/cred.png" *ngIf="maquinav>=3;else vacio">
+        <img src="../../assets/img/cred.png" *ngIf="maquinav>=4;else vacio">
+        <img src="../../assets/img/cred.png" *ngIf="maquinav==5;else vacio">
     </div>
     <div class="consola">
         {{texto}}<br>
         {{texto2}}<br>
         {{r}}
+    </div>
+
+    <div  class="vidas-jugador">
+        <img src="../../assets/img/cred.png" *ngIf="jugadorv>=1;else vacio">
+        <img src="../../assets/img/cred.png" *ngIf="jugadorv>=2;else vacio">
+        <img src="../../assets/img/cred.png" *ngIf="jugadorv>=3;else vacio">
+        <img src="../../assets/img/cred.png" *ngIf="jugadorv>=4;else vacio">
+        <img src="../../assets/img/cred.png" *ngIf="jugadorv==5;else vacio">
     </div>
 
     <div class="selecciones">
@@ -19,3 +31,8 @@
         <div  (click)="elegir('piedra')" class="elecciones piedra"></div>
     </div>
 </div>
+
+
+<ng-template #vacio>
+    <img src="../../assets/img/cblack.png">
+</ng-template>
