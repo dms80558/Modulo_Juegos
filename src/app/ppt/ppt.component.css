@@ -1,22 +1,122 @@
 .contendedor-general{
     width: 100vw;
     height: 100vh;
-    background-color: aquamarine;
+    background-image: url("../../assets/img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
-
 }
 
+/* CONTENEDOR CENTRAL (VIDAS, CONSOLA) */
+
+.contenedor-partida{
+    display: flex;
+    justify-content: space-around;
+}
+/* CONSOLA */
+/* .consola>img{
+    animation: entrada 2s;
+    -webkit-animation: entrada 2s;
+} */
+
+/* CONTENEDOR OPONENTE */
+.maquina-zona{
+    order:1;
+    background-color:rgba(27, 104, 220, 0.406);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+.maquina-zona>h3{
+    text-align: center;
+    color: white;
+    background-color: rgb(109, 102, 131);
+    padding-top: 0px;
+}
+.maquina-zona>img{
+    width:100px;
+    height: 100px;
+}
+.vidas-maquina{
+    width:fit-content;
+    height: fit-content;
+}
+.vidas-maquina>img{
+    width:25px;
+    height: 25px;
+}
+.contador-maquina{
+    margin-right: 5px;
+    text-align: center;
+    background-color: rgb(109, 102, 131);
+    
+}
+/* CONTENEDOR JUGADOR */
+.jugador-zona{
+    order:3;
+    background-color:rgba(27, 104, 220, 0.406);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    flex-wrap: wrap;
+
+}
+.jugador-zona>h3{
+    text-align: center;
+    color: white;
+    background-color: rgb(109, 102, 131);
+    padding-top: 0px;
+}
+.jugador-zona>img{
+    width:100px;
+    height: 100px;
+}
+.vidas-jugador{
+    width:fit-content;
+    height: fit-content;
+}
+.vidas-jugador>img{
+    width:25px;
+    height: 25px;
+}
+.contador-maquina{
+    margin-right: 5px;
+    text-align: center;
+    background-color: rgb(109, 102, 131);
+    
+}
+
+
+
+
+
+
+
 .consola{
+    order: 2;
     width: 400px;
     height: 200px;
     background-color: rgb(109, 102, 131);
     padding: 10px;
     color:white
 }
+.jugador-zona{
+    order:3;
+}
+.jugador-zona>h3{
+    color: white;
+}
 
+
+
+/* ELECCIONES DEL JUGADOR */
 .selecciones{
     width: 300px;
     height: 100px;
@@ -27,7 +127,6 @@
     width: 80px; height: 80px;
     margin: 10px;
     float: left;
-    background-color: aliceblue;
     animation: latir 2s;
     -webkit-animation: latir 2s infinite;
 }
@@ -80,12 +179,78 @@
 
 }
 
-.vidas-consola{
-    display: inline-block;
-}
+
 
 @media only screen and (max-width:500px){
     .consola{
         width: 200px;
     }
 }
+
+
+.contador{
+    background-color: aqua;
+    width: 350px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    
+}
+
+
+.contador-jugador{
+    text-align: center;
+    margin-right: 6px;
+
+}
+
+/* ANIMACIONES */
+/* @keyframes entrada {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	38% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateX(0);
+	}
+
+	55% {
+		animation-timing-function: ease-in;
+		transform: translateX(-68px);
+	}
+
+	72% {
+		animation-timing-function: ease-out;
+		transform: translateX(0);
+	}
+
+	81% {
+		animation-timing-function: ease-in;
+		transform: translateX(-28px);
+	}
+
+	90% {
+		animation-timing-function: ease-out;
+		transform: translateX(0);
+	}
+
+	95% {
+		animation-timing-function: ease-in;
+		transform: translateX(-8px);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		transform: translateX(0);
+	}
+} */

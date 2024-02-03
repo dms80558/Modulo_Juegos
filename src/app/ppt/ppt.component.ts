@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ppt.component.css']
 })
 export class PptComponent  implements OnInit{
-  texto:string="";
-  texto2:string="";
+  imagejugador:string="";
+  imge:string="";
   r:string=""
   //vidas
   maquinav:number = 5;
@@ -16,31 +16,22 @@ export class PptComponent  implements OnInit{
   maquina:number = 0;
   jugador:number = 0;
 
-  public images = ["../../assets/img/cred.png","../../assets/img/cred.png","../../assets/img/cred.png","../../assets/img/cred.png","../../assets/img/cred.png"];
 
-  removeImage(){
-    this.images = ["../../assets/img/cred.png","../../assets/img/cred.png","../../assets/img/cred.png","../../assets/img/cred.png"];
-   }
-
-   reiniciar(){
-    if(this.maquinav==0&&this.jugadorv!=0){
-      this.jugador += 1; 
-    }
-    else if(this.maquinav!=0&&this.jugadorv==0){
-      this.maquina += 1; 
-    }
-   }
 
   elecciones:string [] = ["piedra","papel","tijeras"];
+  imagenes:string[] = ["../../assets/img/piedra.png",
+  "../../assets/img/papel.png",
+  "../../assets/img/tijeras.png"];
   ngOnInit(): void {
-    this.texto ="Elige sabiamente: "
+  
   }
 
-  elegir(eleccion:string){
+  elegir(eleccion:string,recurso:string){
     
-      this.texto = "Eligiste: " + eleccion;
+      this.imagejugador = recurso;
       var eleccionMaquina= Math.floor(Math.random()*3);
-      this.texto2 = "La maquina ha elegido " + this.elecciones [eleccionMaquina];
+      this.imge =  this.imagenes [eleccionMaquina];
+
 
       if(eleccion=="tijeras" && this.elecciones [eleccionMaquina]=="papel"
       ||eleccion=="papel" && this.elecciones [eleccionMaquina]=="piedra"
@@ -48,6 +39,7 @@ export class PptComponent  implements OnInit{
           this.r = "Ganaste 👏👏";
           this.maquinav = this.maquinav - 1;
           if(this.maquinav==0){
+            
             this.jugador = this.jugador +1;
             this.maquinav =5;
             this.jugadorv = 5;
@@ -67,8 +59,6 @@ export class PptComponent  implements OnInit{
             this.maquinav =5;
             this.jugadorv = 5;
           }
-         
-        
 
       }
       else{
