@@ -9,13 +9,15 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { PptComponent } from './ppt/ppt.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { VolverJugarDgComponent } from './volver-jugar-dg/volver-jugar-dg.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
-    PptComponent
+    PptComponent,
+    VolverJugarDgComponent
   ],
   imports: [
     BrowserModule,

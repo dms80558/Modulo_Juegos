@@ -19,10 +19,14 @@
 /* CONSOLA */
 .consola{
     order: 2;
-    width: 400px;
+    width: 300px;
     height: 200px;
-    background-color: rgb(109, 102, 131);
+    background-color: rgba(109, 102, 131, 0.653);
     color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
    
 }
 .contenedor-resultados{
@@ -30,6 +34,11 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding-bottom: 30px;
+}
+.resultado{
+    align-items: center;
+    justify-content: center;
 }
 
 /* CONTENEDOR OPONENTE */
@@ -41,12 +50,12 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-right: 20px;
 
 }
 .maquina-zona>h3{
     text-align: center;
     color: white;
-    background-color: rgb(109, 102, 131);
     padding-top: 0px;
 }
 .maquina-zona>img{
@@ -63,9 +72,7 @@
 }
 .contador-maquina{
     margin-right: 5px;
-    text-align: center;
-    background-color: rgb(109, 102, 131);
-    
+    text-align: center;    
 }
 /* CONTENEDOR JUGADOR */
 .jugador-zona{
@@ -77,11 +84,11 @@
     justify-content:space-between;
     flex-wrap: wrap;
     width: 221px;
+    margin-left: 20px;
 }
 .jugador-zona>h3{
     text-align: center;
     color: white;
-    background-color: rgb(109, 102, 131);
     padding-top: 0px;
 }
 .jugador-zona>img{
@@ -99,8 +106,7 @@
 .contador-maquina{
     margin-right: 5px;
     text-align: center;
-    background-color: rgb(109, 102, 131);
-    
+    color: #ffffff;    
 }
 
 /* ELECCIONES DEL JUGADOR */
@@ -194,8 +200,10 @@
 .contador-jugador{
     text-align: center;
     margin-right: 6px;
+    color: #ffffff;  
 
 }
+
 
 /* ANIMACIONES */
 /* @keyframes entrada {
