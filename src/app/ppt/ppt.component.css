@@ -17,10 +17,20 @@
     justify-content: space-around;
 }
 /* CONSOLA */
-/* .consola>img{
-    animation: entrada 2s;
-    -webkit-animation: entrada 2s;
-} */
+.consola{
+    order: 2;
+    width: 400px;
+    height: 200px;
+    background-color: rgb(109, 102, 131);
+    color:white;
+   
+}
+.contenedor-resultados{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
 
 /* CONTENEDOR OPONENTE */
 .maquina-zona{
@@ -66,7 +76,7 @@
     align-items: center;
     justify-content:space-between;
     flex-wrap: wrap;
-
+    width: 221px;
 }
 .jugador-zona>h3{
     text-align: center;
@@ -92,29 +102,6 @@
     background-color: rgb(109, 102, 131);
     
 }
-
-
-
-
-
-
-
-.consola{
-    order: 2;
-    width: 400px;
-    height: 200px;
-    background-color: rgb(109, 102, 131);
-    padding: 10px;
-    color:white
-}
-.jugador-zona{
-    order:3;
-}
-.jugador-zona>h3{
-    color: white;
-}
-
-
 
 /* ELECCIONES DEL JUGADOR */
 .selecciones{
