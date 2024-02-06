@@ -10,6 +10,9 @@ import {MatButtonModule} from '@angular/material/button';
 import { PptComponent } from './ppt/ppt.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { VolverJugarDgComponent } from './volver-jugar-dg/volver-jugar-dg.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { Page404Component } from './page404/page404.component';
+
 
 
 @NgModule({
@@ -17,7 +20,8 @@ import { VolverJugarDgComponent } from './volver-jugar-dg/volver-jugar-dg.compon
     AppComponent,
     InicioComponent,
     PptComponent,
-    VolverJugarDgComponent
+    VolverJugarDgComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,
@@ -25,7 +29,8 @@ import { VolverJugarDgComponent } from './volver-jugar-dg/volver-jugar-dg.compon
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
