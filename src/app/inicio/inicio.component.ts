@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 @Component({
   selector: 'app-inicio',
@@ -7,6 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent {
+  
+
+
+  
   // en: string [] = ["","**","/piedra-papel-tijera"];
   // title='ns';
   // constructor(private router:Router){

@@ -1,8 +1,10 @@
 <div class="contenedor-card">
+
+  <!-- CARD 1 -->
   <mat-card class="card1">
     <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Nombre juego</mat-card-title>
+      <div mat-card-avatar class="icon1"></div>
+      <mat-card-title>Piedra Papel o Tijera</mat-card-title>
       <mat-card-subtitle>. . .</mat-card-subtitle>
     </mat-card-header>
     <img
@@ -11,26 +13,32 @@
       alt="Foto_juego"
     />
     <mat-card-actions class="centered-actions">
-      <a routerLink="/piedra-papel-tijera"><button mat-button class="b_play">PLAY</button></a>
+      <a routerLink='/piedra-papel-tijera'><button mat-button class="b_play">PLAY</button></a>
+
+      <!-- <a [routerLink]="['/piedra-papel-tijera',nombreUsuario]"><button mat-button class="b_play">PLAY</button></a> -->
       <button mat-button class="b_share">SHARE</button>
     </mat-card-actions>
   </mat-card>
+
+  <!-- CARD 2 -->
   <mat-card class="card2">
     <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Nombre juego</mat-card-title>
+      <div mat-card-avatar class="icon2"></div>
+      <mat-card-title>Tres en raya</mat-card-title>
       <mat-card-subtitle>. . .</mat-card-subtitle>
     </mat-card-header>
     <img
       mat-card-image
-      src="https://eresmama.com/wp-content/uploads/2019/09/piedra-papel-tijera-corto.jpg"
+      src="../../assets/img/tresraya.png"
       alt="Foto_juego"
     />
     <mat-card-actions class="centered-actions">
-      <button mat-button class="b_play">PLAY</button>
+      <a routerLink='/tres-raya'><button mat-button class="b_play">PLAY</button></a>
       <button mat-button class="b_share">SHARE</button>
     </mat-card-actions>
   </mat-card>
+
+  <!-- CARD 3 -->
   <mat-card class="card3">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
@@ -47,6 +55,9 @@
       <button mat-button class="b_share">SHARE</button>
     </mat-card-actions>
   </mat-card>
+
+
+    <!-- CARD 4 -->
   <mat-card class="card4">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
@@ -63,6 +74,9 @@
       <button mat-button class="b_share">SHARE</button>
     </mat-card-actions>
   </mat-card>
+
+
+    <!-- CARD 5 -->
   <mat-card class="card5">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>

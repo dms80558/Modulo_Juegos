@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { VolverJugarDgComponent } from '../volver-jugar-dg/volver-jugar-dg.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-ppt',
@@ -8,6 +9,7 @@ import { VolverJugarDgComponent } from '../volver-jugar-dg/volver-jugar-dg.compo
   styleUrls: ['./ppt.component.css']
 })
 export class PptComponent  implements OnInit{
+  // nombre:string="";
   imagejugador:string="";
   imge:string="";
   r:string=""
@@ -18,7 +20,9 @@ export class PptComponent  implements OnInit{
   maquina:number = 0;
   jugador:number = 0;
 
+  // constructor(private ruta:ActivatedRoute){
 
+  // }
 
   elecciones:string [] = ["piedra","papel","tijeras"];
   imagenes:string[] = ["../../assets/img/piedra.png",
@@ -52,7 +56,11 @@ export class PptComponent  implements OnInit{
   }
 
   ngOnInit(): void {
-    
+    // this.ruta.params.subscribe(
+    //   params => {
+    //       this.nombre = params['nick'];
+    //   }
+    // )
   }
 
   elegir(eleccion:string,recurso:string){

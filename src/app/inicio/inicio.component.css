@@ -13,6 +13,16 @@ mat-card{
 
 }
 
+.card1{
+  background-color: rgba(82, 148, 69, 0.63);
+}
+.card2{
+  background-color: rgba(148, 74, 69, 0.63);
+}
+.card2>img{
+  width: 400px;
+  height: 225px;
+}
 
 
 .card5{
@@ -21,8 +31,12 @@ mat-card{
 }
 
 
-.example-header-image {
+.icon1 {
   background-image: url('https://cdn-icons-png.flaticon.com/512/6831/6831874.png');
+  background-size: cover;
+}
+.icon2{
+  background-image: url("../../assets/img/3icon.png");
   background-size: cover;
 }
 

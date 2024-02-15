@@ -12,6 +12,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { VolverJugarDgComponent } from './volver-jugar-dg/volver-jugar-dg.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { Page404Component } from './page404/page404.component';
+import { TresRayaComponent } from './tres-raya/tres-raya.component';
 
 
 
@@ -21,7 +22,8 @@ import { Page404Component } from './page404/page404.component';
     InicioComponent,
     PptComponent,
     VolverJugarDgComponent,
-    Page404Component
+    Page404Component,
+    TresRayaComponent
   ],
   imports: [
     BrowserModule,
