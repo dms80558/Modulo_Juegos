@@ -13,6 +13,7 @@ import { VolverJugarDgComponent } from './volver-jugar-dg/volver-jugar-dg.compon
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { Page404Component } from './page404/page404.component';
 import { TresRayaComponent } from './tres-raya/tres-raya.component';
+import { CeldaComponent } from './celda/celda.component';
 
 
 
@@ -23,7 +24,8 @@ import { TresRayaComponent } from './tres-raya/tres-raya.component';
     PptComponent,
     VolverJugarDgComponent,
     Page404Component,
-    TresRayaComponent
+    TresRayaComponent,
+    CeldaComponent
   ],
   imports: [
     BrowserModule,

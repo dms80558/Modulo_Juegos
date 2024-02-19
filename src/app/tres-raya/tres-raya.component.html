@@ -1,1 +1,14 @@
-<p>tres-raya works!</p>
+<div>
+    <div class="estado text-center">
+        {{estadoMensaje}}
+    </div>
+    <div class="tabla" *ngFor="let fila of [0,1,2]">
+        <app-celda *ngFor="let col of [0,1,2]"
+        [fila]="fila"
+        [col]="col"
+        [simbolo] ="tabla[fila][col]"
+        (click)="move(row,col)">
+    </app-celda>
+    </div>
+    <button *ngIf="gameOver" class="btn new-game" (click)="newJuego()">Jugar de nuevo</button>
+</div>
