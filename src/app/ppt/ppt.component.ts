@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { VolverJugarDgComponent } from '../volver-jugar-dg/volver-jugar-dg.component';
 import { ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-ppt',
@@ -9,6 +10,14 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./ppt.component.css']
 })
 export class PptComponent  implements OnInit{
+
+
+  // Swal.fire({
+  //   title: "The Internet?",
+  //   text: "That thing is still around?",
+  //   icon: "question"
+  // });
+
   // nombre:string="";
   imagejugador:string="";
   imge:string="";
@@ -86,7 +95,9 @@ export class PptComponent  implements OnInit{
       }
       else if (eleccion=="papel" && this.elecciones [eleccionMaquina]=="tijeras"
       ||eleccion=="piedra" && this.elecciones [eleccionMaquina]=="papel"
-      ||eleccion=="tijeras" && this.elecciones [eleccionMaquina]=="papel"){
+      // ||eleccion=="tijeras" && this.elecciones [eleccionMaquina]=="papel"
+      ||eleccion=="tijeras" && this.elecciones [eleccionMaquina]=="piedra"
+      ){
         this.r = "Has elegido mal estúdipo 🤌"
         
           this.jugadorv = this.jugadorv - 1;

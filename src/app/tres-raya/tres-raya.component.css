@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     color: white;
+    margin-left: 25px;
 }
 .estado{
     color: black;
@@ -11,5 +12,9 @@
     font-weight: bold;
 }
 .new-game{
+    
     width: 100%;
+}
+button{
+    align-items: center;
 }

@@ -6,7 +6,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { TresRayaComponent } from './tres-raya/tres-raya.component';
 
 const routes: Routes = [
-  {path: 'piedra-papel-tijera/:nick', component: PptComponent},
+  {path: 'piedra-papel-tijera', component: PptComponent},
   {path: 'tres-raya', component:TresRayaComponent},
   {path: '', component: InicioComponent},
   {path: '**', component: Page404Component},

@@ -43,7 +43,7 @@ export class TresRayaComponent implements OnInit {
 
   mover(fila:number,col:number): void{
     if(!this.gameOver && this.tabla[fila][col]=== CeldaEnum.VACIO){
-      
+      this.mensajes = 'Jugador actual ' +this.jugadorTurno;
       this.tabla[fila][col] = this.jugadorTurno!;
       
       if(this.empate()){
@@ -57,8 +57,9 @@ export class TresRayaComponent implements OnInit {
       else{
         this.jugadorTurno = this.jugadorTurno === CeldaEnum.X ? CeldaEnum.O : CeldaEnum.X;
       }
+      
     }
-    this.mensajes = 'Jugador actual ' +this.jugadorTurno;
+    
   }
 
   empate():boolean{
