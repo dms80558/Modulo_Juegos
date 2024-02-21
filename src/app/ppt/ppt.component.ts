@@ -4,21 +4,13 @@ import { VolverJugarDgComponent } from '../volver-jugar-dg/volver-jugar-dg.compo
 import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
 
+
 @Component({
   selector: 'app-ppt',
   templateUrl: './ppt.component.html',
   styleUrls: ['./ppt.component.css']
 })
 export class PptComponent  implements OnInit{
-
-
-  // Swal.fire({
-  //   title: "The Internet?",
-  //   text: "That thing is still around?",
-  //   icon: "question"
-  // });
-
-  // nombre:string="";
   imagejugador:string="";
   imge:string="";
   r:string=""
@@ -41,15 +33,30 @@ export class PptComponent  implements OnInit{
   constructor(public dialog: MatDialog){}
 
   abrirDialogo(): void{
-    const dialogRef = this.dialog.open(VolverJugarDgComponent, {
-      width: '500px',
-      height: '100px',
-      panelClass: 'background'
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      if(result == 'botonPresionado'){
+    Swal.fire({
+      title: "Fin de la partida",
+      text: "¿Quieres seguir jugando?",
+      icon: "question",
+      confirmButtonText: "Jugar",
+      showClass: {
+        popup: `
+          animate__animated
+          animate__fadeInUp
+          animate__faster
+        `
+      },
+      hideClass: {
+        popup: `
+          animate__animated
+          animate__fadeOutDown
+          animate__faster
+        `
+      }
+      
+    }).then((result) => {
+      if (result.isConfirmed) {
         if(this.maquinav==0){
-          this.jugador = this.jugador +1;
+            this.jugador = this.jugador +1;
             this.maquinav =5;
             this.jugadorv = 5;
         }
@@ -58,10 +65,13 @@ export class PptComponent  implements OnInit{
           this.maquinav =5;
           this.jugadorv = 5;
         }
-        
-        
+      } else {
+        this.jugador = 0;
+        this.maquina = 0; 
+        this.maquinav =5;
+        this.jugadorv = 5;
       }
-    })
+      });
   }
 
   ngOnInit(): void {

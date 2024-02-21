@@ -10,7 +10,7 @@ export class CeldaComponent implements OnInit{
 
   @Input() public simbolo: CeldaEnum = CeldaEnum.VACIO;
   @Input() public fila: number | undefined;
-  @Input() public col: number | undefined;
+  @Input() public col: number = 0;
 
   constructor(){}
   ngOnInit(){}

@@ -9,9 +9,12 @@ import { CeldaEnum } from '../celda/CeldaEnum';
 })
 export class TresRayaComponent implements OnInit {
   private jugadorTurno: CeldaEnum | undefined;
+  private a : CeldaEnum | undefined;
   public tabla: CeldaEnum[][] = [];
   private gameOver: boolean = false;
   public mensajes: String = "";
+
+  victoria : boolean = false;
 
   constructor(){}
 
@@ -27,8 +30,10 @@ export class TresRayaComponent implements OnInit {
   newJuego(){
     this.crearTabla();
     this.jugadorTurno = CeldaEnum.X;
+    this.a = CeldaEnum.O;
     this.gameOver = false;
     this.mensajes = 'Jugador actual ' +this.jugadorTurno;
+    this.victoria = false; 
   }
 
   public crearTabla(){
@@ -43,7 +48,7 @@ export class TresRayaComponent implements OnInit {
 
   mover(fila:number,col:number): void{
     if(!this.gameOver && this.tabla[fila][col]=== CeldaEnum.VACIO){
-      this.mensajes = 'Jugador actual ' +this.jugadorTurno;
+      this.mensajes = 'Jugador actual ' +this.a;
       this.tabla[fila][col] = this.jugadorTurno!;
       
       if(this.empate()){
@@ -55,7 +60,8 @@ export class TresRayaComponent implements OnInit {
         this.gameOver = true;
       }
       else{
-        this.jugadorTurno = this.jugadorTurno === CeldaEnum.X ? CeldaEnum.O : CeldaEnum.X;
+        this.jugadorTurno = this.jugadorTurno == CeldaEnum.X ? CeldaEnum.O : CeldaEnum.X;
+        this.a = this.a == CeldaEnum.O ? CeldaEnum.X : CeldaEnum.O;
       }
       
     }
@@ -76,38 +82,38 @@ export class TresRayaComponent implements OnInit {
   ganador(): boolean{
     //horizontal
     for(const columnas of this.tabla){
-      if(columnas[0]=== columnas[1] && columnas[0] === columnas[2] && columnas[0]!==CeldaEnum.VACIO){
-        return true;
+      if(columnas[0]== columnas[1] && columnas[0] == columnas[2] && columnas[0]!=CeldaEnum.VACIO){
+        this.victoria = true;
       }
     }
     //vertical 
     for(let col=0; col< this.tabla[0].length; col++){
       if(
-        this.tabla[0][col] === this.tabla[1][col] &&
-        this.tabla[0][col] === this.tabla[2][col] &&
-        this.tabla[0][col] !== CeldaEnum.VACIO
-      ){
-        return true;
+        this.tabla[0][col] == this.tabla[1][col] &&
+        this.tabla[0][col] == this.tabla[2][col] &&
+        this.tabla[0][col] != CeldaEnum.VACIO
+        ){
+        this.victoria = true; 
       }
     }
-
+    
     //diagonales
     if(
-      this.tabla[0][0] === this.tabla[1][1] &&
-      this.tabla[0][0] === this.tabla[2][2] &&
-      this.tabla[0][0] !== CeldaEnum.VACIO
-    ){
-      return true;
+      this.tabla[0][0] == this.tabla[1][1] &&
+      this.tabla[0][0] == this.tabla[2][2] &&
+      this.tabla[0][0] != CeldaEnum.VACIO
+      ){
+      this.victoria = true; 
     }
     if(
-      this.tabla[0][2] === this.tabla[1][1] &&
-      this.tabla[0][2] === this.tabla[2][2] &&
-      this.tabla[0][2] !== CeldaEnum.VACIO
-    ){
-      return true;
+      this.tabla[0][2] == this.tabla[1][1] &&
+      this.tabla[0][2] == this.tabla[2][0] &&
+      this.tabla[0][2] != CeldaEnum.VACIO
+      ){
+      this.victoria = true; 
     }
 
-    return false;
+    return this.victoria;
   }
 
 
