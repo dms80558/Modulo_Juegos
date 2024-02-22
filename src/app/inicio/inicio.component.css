@@ -1,16 +1,12 @@
 .contenedor-card{
     height: 780px;
     width: 1809px;
-    margin-left: 80px;
     margin-top: 25px;
 }
 mat-card{
-  float: left;
   width: 400px;
   background-color: rgba(82, 148, 69, 0.63);
-  margin-right: 30px;
   margin-bottom: 78px;
-
 }
 
 .card1{
@@ -27,7 +23,6 @@ mat-card{
 
 .card5{
   margin-left: 670px;
-
 }
 
 

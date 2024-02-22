@@ -1,5 +1,5 @@
 <div class="contenedor">
-    <div class="estado text-center">
+    <div class="estado">
         {{mensajes}}
     </div>
     <div class="tabla" *ngFor="let fila of [0,1,2]">
@@ -10,5 +10,4 @@
         (click)="mover(fila,col)">
     </app-celda>
     </div>
-    <button *ngIf="finJuego" class="btn new-game" (click)="newJuego()">Jugar de nuevo</button>
 </div>

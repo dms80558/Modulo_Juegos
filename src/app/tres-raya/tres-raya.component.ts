@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CeldaComponent } from '../celda/celda.component';
 import { CeldaEnum } from '../celda/CeldaEnum';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tres-raya',
@@ -19,11 +20,26 @@ export class TresRayaComponent implements OnInit {
   constructor(){}
 
   ngOnInit(): void {
-
     this.newJuego();
   }
 
+  abrirD(){
+    Swal.fire({
+      title: "Fin de la partida",
+      text: "¿Quieres seguir jugando?",
+      icon: "question",
+      confirmButtonText: "Jugar",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.newJuego();
+        } else {
+          this.newJuego();
+        }
+        });
+  }
+
   get finJuego():boolean{
+
     return this.gameOver;
   }
 
@@ -32,7 +48,7 @@ export class TresRayaComponent implements OnInit {
     this.jugadorTurno = CeldaEnum.X;
     this.a = CeldaEnum.O;
     this.gameOver = false;
-    this.mensajes = 'Jugador actual ' +this.jugadorTurno;
+    this.mensajes = 'Jugador actual: ' +this.jugadorTurno;
     this.victoria = false; 
   }
 
@@ -48,15 +64,17 @@ export class TresRayaComponent implements OnInit {
 
   mover(fila:number,col:number): void{
     if(!this.gameOver && this.tabla[fila][col]=== CeldaEnum.VACIO){
-      this.mensajes = 'Jugador actual ' +this.a;
+      this.mensajes = 'Jugador actual: ' +this.a;
       this.tabla[fila][col] = this.jugadorTurno!;
       
       if(this.empate()){
         this.mensajes = "Empate";
         this.gameOver = true;
+        this.abrirD();
       }
       else if(this.ganador()){
-        this.mensajes = 'Gano' + this.jugadorTurno;
+        this.mensajes = 'Gano: ' + this.jugadorTurno;
+        this.abrirD();
         this.gameOver = true;
       }
       else{
