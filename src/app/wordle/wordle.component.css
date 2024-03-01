@@ -1,0 +1,50 @@
+.container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .titulo{
+        width: 100%;
+        height: 54px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 24px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .tablero{
+        flex-grow: 1;
+        margin-top: 12px;
+        align-items: center;
+        justify-content: center;
+
+        .intentos-contenedor{
+            display: flex;
+            margin-bottom: 4px;
+
+            .letra-contenedor{
+                width: 64px;
+                height: 64px;
+                border: 2px solid #ddd;
+                box-sizing: border-box;
+                margin: 0 2px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 32px;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .keyboard-container{
+        margin-bottom: 12px;
+
+    }
+}
+
