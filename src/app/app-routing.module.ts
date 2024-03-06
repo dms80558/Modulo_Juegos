@@ -9,7 +9,11 @@ import { WordleComponent } from './wordle/wordle.component';
 const routes: Routes = [
   {path: 'piedra-papel-tijera', component: PptComponent},
   {path: 'tres-raya', component:TresRayaComponent},
+<<<<<<< HEAD
   {path: 'wordle', component: WordleComponent},
+=======
+  {path: 'wordle', component:WordleComponent},
+>>>>>>> 01818e2640207838a5157c4daf212edc7635f690
   {path: '', component: InicioComponent},
   {path: '**', component: Page404Component},
 ];
