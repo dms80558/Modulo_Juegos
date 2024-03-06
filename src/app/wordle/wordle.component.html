@@ -5,7 +5,12 @@
     <div class="tablero">
         <div class="intentos-contenedor" *ngFor="let intento of intentos">
             <div class="letra-contenedor" *ngFor="let letra of intento.letras"
-                [class.tiene-text]="letra.text !== ''">
+                [class.tiene-text]="letra.text !== ''"
+                [class.parcial]="letra.estado == LetterState.MATCH_PARCIAL"
+                [class.mal]="letra.estado == LetterState.MAL"
+                [class.bien]="letra.estado == LetterState.MATCH_COMPLETO"
+                >
+                
                 {{letra.text}}
             </div>
         </div>
@@ -18,6 +23,3 @@
     [class.fuera-mens]="desaparicionInfo">
         {{mensInfo}}
     </div>
-</div>
-
-
