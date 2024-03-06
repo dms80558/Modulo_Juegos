@@ -39,12 +39,42 @@
                 font-size: 32px;
                 font-weight: bold;
                 text-transform: uppercase;
-
-                &.tiene-text{
+                transition: transform 180ms;
+                &.tiene-text:;
+                -webkit-transition: transform 180ms;
+                -moz-transition: transform 180ms;
+                -ms-transition: transform 180ms;
+                -o-transition: transform 180ms;
+{
                     border-color: #888;
                     animation-name: letra-ap;
                     animation-duration: 120ms;
                 }
+
+                &.bien{
+                    background-color: green;
+                    border-color: #6aaa63;
+                    color:white;
+                }
+
+                &.parcial{
+                    background-color: #c9b458;
+                    border-color: #c9b458;
+                    color:white;
+                }
+                &.mal{
+                    background-color: #86888a;
+                    border-color: #86888a;
+                    color:white;
+                }
+
+                &.fold{
+                    transform: scaleY(0);
+                    -webkit-transform: scaleY(0);
+                    -moz-transform: scaleY(0);
+                    -ms-transform: scaleY(0);
+                    -o-transform: scaleY(0);
+}
             }
         }
     }
