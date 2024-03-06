@@ -1,10 +1,17 @@
+.contenedor{
+    width: 600px;
+    height: 600px;
+    background-image: url(../../assets/img/back.gif);
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    margin-left: 35%;
+}
 .tabla{
-    display: flex;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    margin-left: 25px;
+    
 }
 .estado{
     color: black;
@@ -17,5 +24,5 @@
 }
 .new-game{
     width: 100%;
-}
 
+}

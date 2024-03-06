@@ -1,5 +1,6 @@
 <div class="contenedor-card">
 
+  <div class="f1">
   <!-- CARD 1 -->
   <mat-card class="card1">
     <mat-card-header>
@@ -14,9 +15,6 @@
     />
     <mat-card-actions class="centered-actions">
       <a routerLink='/piedra-papel-tijera'><button mat-button class="b_play">PLAY</button></a>
-
-      <!-- <a [routerLink]="['/piedra-papel-tijera',nombreUsuario]"><button mat-button class="b_play">PLAY</button></a> -->
-      <button mat-button class="b_share">SHARE</button>
     </mat-card-actions>
   </mat-card>
 
@@ -34,10 +32,11 @@
     />
     <mat-card-actions class="centered-actions">
       <a routerLink='/tres-raya'><button mat-button class="b_play">PLAY</button></a>
-      <button mat-button class="b_share">SHARE</button>
     </mat-card-actions>
   </mat-card>
+</div>
 
+<div class="f1">
   <!-- CARD 3 -->
   <mat-card class="card3">
     <mat-card-header>
@@ -51,48 +50,12 @@
       alt="Foto_juego"
     />
     <mat-card-actions class="centered-actions">
-      <button mat-button class="b_play">PLAY</button>
-      <button mat-button class="b_share">SHARE</button>
+      <a routerLink='/wordle'><button mat-button class="b_play">PLAY</button></a>
     </mat-card-actions>
   </mat-card>
-
-
-    <!-- CARD 4 -->
-  <mat-card class="card4">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Nombre juego</mat-card-title>
-      <mat-card-subtitle>. . .</mat-card-subtitle>
-    </mat-card-header>
-    <img
-      mat-card-image
-      src="https://eresmama.com/wp-content/uploads/2019/09/piedra-papel-tijera-corto.jpg"
-      alt="Foto_juego"
-    />
-    <mat-card-actions class="centered-actions">
-      <button mat-button class="b_play">PLAY</button>
-      <button mat-button class="b_share">SHARE</button>
-    </mat-card-actions>
-  </mat-card>
-
-
-    <!-- CARD 5
-  <mat-card class="card5">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Nombre juego</mat-card-title>
-      <mat-card-subtitle>. . .</mat-card-subtitle>
-    </mat-card-header>
-    <img
-      mat-card-image
-      src="https://eresmama.com/wp-content/uploads/2019/09/piedra-papel-tijera-corto.jpg"
-      alt="Foto_juego"
-    />
-    <mat-card-actions class="centered-actions">
-      <button mat-button class="b_play">PLAY</button>
-      <button mat-button class="b_share">SHARE</button>
-    </mat-card-actions>
-  </mat-card> -->
+</div>
+<div>
+  <app-wordle></app-wordle>
 </div>
 
 

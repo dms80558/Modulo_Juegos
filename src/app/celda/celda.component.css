@@ -4,7 +4,8 @@
     box-sizing: border-box;
     font-size: 5em;
     font-family: sans-serif;
-    color:black;
+    color:rgb(208, 71, 71);
+    background-color: rgba(0, 128, 0, 0.134);
     display: flex;
     justify-content: center;
     align-items: center;

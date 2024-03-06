@@ -1,12 +1,25 @@
 .contenedor-card{
     height: 780px;
     width: 1809px;
-    margin-top: 25px;
+    padding-top: 85px;
+    /*margin-right: 15%;
+    */display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   
+    
 }
+.f1{
+  display: flex;
+  justify-content:center ;
+  margin-bottom: 50px;
+}
+
 mat-card{
   width: 400px;
   background-color: rgba(82, 148, 69, 0.63);
-  margin-bottom: 78px;
+  margin: 10px;
 }
 
 .card1{
@@ -19,12 +32,6 @@ mat-card{
   width: 400px;
   height: 225px;
 }
-
-
-.card5{
-  margin-left: 670px;
-}
-
 
 .icon1 {
   background-image: url('https://cdn-icons-png.flaticon.com/512/6831/6831874.png');
@@ -50,19 +57,14 @@ button{
 }
 
 .b_play{
-  margin-right: 40px;
   color: black;
   background-color: rgba(151, 146, 151, 0.397);
 }
 .b_play:hover{
-  background-color: rgba(247, 0, 255, 0.322);
+  background-color: rgba(255, 213, 0, 0.356);
 }
 
 
-.b_share{
-  background-color: rgba(151, 146, 151, 0.397);
-}
-.b_play:hover{
-  background-color: rgba(247, 0, 255, 0.322);
-}
+
+
 

@@ -14,6 +14,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { Page404Component } from './page404/page404.component';
 import { TresRayaComponent } from './tres-raya/tres-raya.component';
 import { CeldaComponent } from './celda/celda.component';
+import { WordleComponent } from './wordle/wordle.component';
 
 
 
@@ -25,7 +26,8 @@ import { CeldaComponent } from './celda/celda.component';
     VolverJugarDgComponent,
     Page404Component,
     TresRayaComponent,
-    CeldaComponent
+    CeldaComponent,
+    WordleComponent
   ],
   imports: [
     BrowserModule,
