@@ -23,7 +23,7 @@
         align-items: center;
         justify-content: center;
 
-        .intentos-contenedor{
+        .intentosContenedor{
             display: flex;
             margin-bottom: 4px;
 
@@ -40,12 +40,12 @@
                 font-weight: bold;
                 text-transform: uppercase;
                 transition: transform 180ms;
-                &.tiene-text:;
+                
                 -webkit-transition: transform 180ms;
                 -moz-transition: transform 180ms;
                 -ms-transition: transform 180ms;
                 -o-transition: transform 180ms;
-{
+                &.tiene-text{
                     border-color: #888;
                     animation-name: letra-ap;
                     animation-duration: 120ms;
@@ -79,10 +79,6 @@
         }
     }
 
-    .keyboard-container{
-        margin-bottom: 12px;
-
-    }
 
     .mens-inf{
         position: absolute;

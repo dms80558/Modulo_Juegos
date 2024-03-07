@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, QueryList, ViewChildren } from '@angular/core';
 import {words} from './words';
 
 const LONGITUD = 5; 
@@ -38,13 +38,17 @@ enum LetraEstado{
 
 
 export class WordleComponent {
+  @ViewChildren('intentosContenedor') intentosContenedor !: QueryList<ElementRef>;
   readonly intentos: Intento[] = [];
+  readonly LetraEstado = LetraEstado;
   private estadosDeLetraActuales = 0;
   private numIntentosEnviados  = 0;
   mensInfo: string = "";
   desaparicionInfo: boolean = false;
+  won : boolean = false;
 
   private palabraEscogida = '';
+  private contadorLetrasWord: {[letra: string]: number} = {};
 
   constructor() {
     // Populate initial state of "tries".
@@ -66,6 +70,15 @@ export class WordleComponent {
       }
       
     }
+
+    
+    for(const letra of this.palabraEscogida){
+      const count = this.contadorLetrasWord[letra];
+      if(count == null){
+        this.contadorLetrasWord[letra] = 0; 
+      }
+      this.contadorLetrasWord[letra]++;
+    }
   }
 
   @HostListener('document:keydown', ['$event'])
@@ -74,7 +87,9 @@ export class WordleComponent {
   }
 
   private handleClickKey(key: string){
-    
+    if(this.won){
+      return;
+    }
     if (LETRAS[key.toLowerCase()]) {
       if(this.estadosDeLetraActuales < (this.numIntentosEnviados+1)*LONGITUD){
         this.setLetra(key);
@@ -83,7 +98,7 @@ export class WordleComponent {
     }
     else if(key=='Backspace'){
       if(this.estadosDeLetraActuales > this.numIntentosEnviados*LONGITUD){
-        this.numIntentosEnviados--;
+        this.estadosDeLetraActuales--;
         this.setLetra('');
       }
     } else if(key == 'Enter'){
@@ -98,11 +113,62 @@ export class WordleComponent {
 
   }
 
-  private comprobarIntentoActual(){
+  private async comprobarIntentoActual(){
     const intentoAct = this.intentos[this.numIntentosEnviados];
     if(intentoAct.letras.some(letra => letra.text =='')){
-      this.mostrarMensaje(this.palabraEscogida);
+      this.mostrarMensaje("Faltan letras");
     }
+
+    const wordFromCurTry = intentoAct.letras.map(letra => letra.text).join('').toUpperCase();
+    if(!words.includes(this.palabraEscogida)){
+      this.mostrarMensaje("No es una palabra de la lista");
+      return;
+    }
+
+    const contadorLetrasWord = {...this.contadorLetrasWord};
+    const estados: LetraEstado[] = [];
+    for(let i=0;i<LONGITUD;i++){
+      const expected = this.palabraEscogida[i];
+      const curLetra = intentoAct.letras[i];
+      const got = curLetra.text.toLowerCase();
+      let estado = LetraEstado.MAL;
+      if(expected==got && contadorLetrasWord[got] > 0){
+        contadorLetrasWord[expected]--;
+        estado = LetraEstado.MATCH_COMPLETO;
+      }else if(this.palabraEscogida.includes(got) && contadorLetrasWord[got] > 0){
+        contadorLetrasWord[expected]--;
+        estado = LetraEstado.MATCH_PARCIAL;
+      }
+      estados.push(estado);  
+    }
+    const intentosContenedor = this.intentosContenedor.get(this.numIntentosEnviados)?.nativeElement as 
+      HTMLElement;
+      const letterEles = intentosContenedor.querySelectorAll('.letra-contenedor');
+      for (let i = 0; i < letterEles.length; i++) {
+        // "Fold" the letter, apply the result (and update the style), then unfold
+        // it.
+        const curLetterEle = letterEles[i];
+        curLetterEle.classList.add('fold');
+        // Wait for the fold animation to finish.
+        await this.wait(180);
+        // Update state. This will also update styles.
+        intentoAct.letras[i].estado = estados[i];
+        // Unfold.
+        curLetterEle.classList.remove('fold');
+        await this.wait(180);
+  }
+  this.numIntentosEnviados++;
+  if(estados.every(estado=>estado==LetraEstado.MATCH_COMPLETO)){
+    this.mostrarMensaje("Has ganado");
+    this.won = true;
+  }
+  }
+  private async wait(ms: number) {
+    await new Promise<void>((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, ms);
+    })
   }
 
   private mostrarMensaje(m:string){

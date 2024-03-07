@@ -3,20 +3,16 @@
         Wordle
     </div>
     <div class="tablero">
-        <div class="intentos-contenedor" *ngFor="let intento of intentos">
+        <div class="intentosContenedor" *ngFor="let intento of intentos" #intentosContenedor>
             <div class="letra-contenedor" *ngFor="let letra of intento.letras"
-                [class.tiene-text]="letra.text !== ''"
-                [class.parcial]="letra.estado == LetterState.MATCH_PARCIAL"
-                [class.mal]="letra.estado == LetterState.MAL"
-                [class.bien]="letra.estado == LetterState.MATCH_COMPLETO"
-                >
+                [class.parcial]="letra.estado == LetraEstado.MATCH_PARCIAL"
+                [class.mal]="letra.estado == LetraEstado.MAL"
+                [class.bien]="letra.estado == LetraEstado.MATCH_COMPLETO"
+                [class.tiene-text]="letra.text !== ''">
                 
                 {{letra.text}}
             </div>
         </div>
-    </div>
-    <div class="teclador-contenedor">
-        teclado
     </div>
     <div class="mens-inf" 
     [class.show]="mensInfo !== ''"
