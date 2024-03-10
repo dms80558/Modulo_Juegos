@@ -145,15 +145,10 @@ export class WordleComponent {
       HTMLElement;
       const letterEles = intentosContenedor.querySelectorAll('.letra-contenedor');
       for (let i = 0; i < letterEles.length; i++) {
-        // "Fold" the letter, apply the result (and update the style), then unfold
-        // it.
         const curLetterEle = letterEles[i];
         curLetterEle.classList.add('fold');
-        // Wait for the fold animation to finish.
         await this.wait(180);
-        // Update state. This will also update styles.
         intentoAct.letras[i].estado = estados[i];
-        // Unfold.
         curLetterEle.classList.remove('fold');
         await this.wait(180);
   }
